@@ -28,12 +28,16 @@ ab -n 1000 -c 100 http://www.zeniu.com/info.php
 > * 后面的网址表示测试的目标URL。
 
 #### 事例
-> [root@localhost apache2]# ./bin/ab -n 1000 -c 100 http://www.zeniu.com/info.php
-This is ApacheBench, Version 2.3 <$Revision: 1638069 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
+> 
+<pre>
+[root@localhost apache2]# ./bin/ab -n 1000 -c 100 http://www.zeniu.com/info.php    
+This is ApacheBench, Version 2.3 <$Revision: 1638069 $>    
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/   
+Licensed to The Apache Software Foundation, http://www.apache.org/   
+</pre>
 
-> Benchmarking www.zeniu.com (be patient)
+<pre>
+Benchmarking www.zeniu.com (be patient)
 Completed 100 requests
 Completed 200 requests
 Completed 300 requests
@@ -45,35 +49,44 @@ Completed 800 requests
 Completed 900 requests
 Completed 1000 requests
 Finished 1000 requests
+</pre>
 
-
-> Server Software:        Apache/2.4.12
+<pre>
+Server Software:        Apache/2.4.12
 Server Hostname:        www.zeniu.com
 Server Port:            80
+</pre>
 
-> Document Path:          /info.php
+<pre>
+Document Path:          /info.php
 Document Length:        76971 bytes
+</pre>
 
-> **Concurrency Level**:      100
-**Time taken for tests**:   1.417 seconds
+<pre>
+Concurrency Level:      100
+Time taken for tests:   1.417 seconds
 Complete requests:      1000
-**Failed requests**:        98
+Failed requests:        98
    (Connect: 0, Receive: 0, Length: 98, Exceptions: 0)
 Total transferred:      77184889 bytes
 HTML transferred:       76970889 bytes
-**Requests per second**:    705.52 [#/sec] (mean)
-**Time per request**:       141.740 [ms] (mean)
-**Time per request**:       1.417 [ms] (mean, across all concurrent requests)
+Requests per second:    705.52 [#/sec] (mean)
+Time per request:       141.740 [ms] (mean)
+Time per request:       1.417 [ms] (mean, across all concurrent requests)
 Transfer rate:          53178.82 [Kbytes/sec] received
+</pre>
 
-> Connection Times (ms)
+<pre>
+Connection Times (ms)
               min  mean[+/-sd] median   max
 Connect:        4   72  36.7     74     149
 Processing:     6   69  36.3     68     155
 Waiting:        1   63  37.3     61     146
 Total:        132  141   8.4    138     169
+</pre>
 
-> Percentage of the requests served within a certain time (ms)
+<pre>
+Percentage of the requests served within a certain time (ms)
   50%    138
   66%    140
   75%    141
@@ -83,21 +96,26 @@ Total:        132  141   8.4    138     169
   98%    169
   99%    169
  100%    169 (longest request)
-
+</pre>
 
 
 ### webbench 测试
 webbench -c 100 -t 20 http://www.zeniu.com/info.php
 > -c是并发数 -t是运行测试时间，即20秒钟内中以每次100个请求进行测试
 
-> [root@localhost webbench-1.5]# webbench -c 4000 -t 30 http://www.zeniu.com/info.php
+<pre>
+[root@localhost webbench-1.5]# webbench -c 4000 -t 30 http://www.zeniu.com/info.php
 Webbench - Simple Web Benchmark 1.5
 Copyright (c) Radim Kolar 1997-2004, GPL Open Source Software.
+</pre>
 
-> Benchmarking: GET http://www.zeniu.com/info.php
+<pre>
+Benchmarking: GET http://www.zeniu.com/info.php
 4000 clients, running 30 sec.
+</pre>
 
-> Speed=69940 pages/min, -53046599 bytes/sec.
+<pre>
+Speed=69940 pages/min, -53046599 bytes/sec.
 Requests: 34958 susceed, 12 failed.
-
+</pre>
 
